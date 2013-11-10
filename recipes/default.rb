@@ -39,5 +39,9 @@ end
 service "mailcatcher" do
   provider Chef::Provider::Service::Upstart
   supports :restart => true
-  action :nothing
+  if node['mailcatcher']['start_service'] == true
+    action :start
+  else
+    action :nothing
+  end
 end
