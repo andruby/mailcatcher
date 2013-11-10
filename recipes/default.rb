@@ -39,5 +39,5 @@ end
 service "mailcatcher" do
   provider Chef::Provider::Service::Upstart
   supports :restart => true
-  action :nothing
+  action :start
 end
