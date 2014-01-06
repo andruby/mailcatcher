@@ -4,4 +4,4 @@ description "Mailcatcher SMTP dev tool"
 start on startup
 stop on shutdown
 
-exec mailcatcher --http-ip="<%= node['mailcatcher']['http_ip'] %>" --foreground
+exec <%= File.join Gem.bindir, 'mailcatcher' %> --http-ip="<%= node['mailcatcher']['http_ip'] %>" --foreground
