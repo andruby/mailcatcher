@@ -4,4 +4,9 @@ description "Mailcatcher SMTP dev tool"
 start on startup
 stop on shutdown
 
-exec <%= node['mailcatcher']['bin'] %> --http-ip="<%= node['mailcatcher']['http_ip'] %>" --foreground
+exec <%= node['mailcatcher']['bin'] %> \
+    --http-ip="<%= node['mailcatcher']['http_ip'] %>" \
+    --http-port=<%= node['mailcatcher']['http_port'] %> \
+    --smtp-ip="<%= node['mailcatcher']['smtp_ip'] %>" \
+    --smtp-port=<%= node['mailcatcher']['smtp_port'] %> \
+    --foreground
