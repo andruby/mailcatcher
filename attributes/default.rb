@@ -5,3 +5,4 @@ default['mailcatcher']['smtp_ip'] = '127.0.0.1'
 default['mailcatcher']['smtp_port'] = 1025
 
 default['mailcatcher']['bin'] = 'mailcatcher'
+default['mailcatcher']['logfile'] = '/var/log/mailcatcher.log'
