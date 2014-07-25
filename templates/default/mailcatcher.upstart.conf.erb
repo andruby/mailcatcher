@@ -9,4 +9,4 @@ exec <%= node['mailcatcher']['bin'] %> \
     --http-port=<%= node['mailcatcher']['http_port'] %> \
     --smtp-ip="<%= node['mailcatcher']['smtp_ip'] %>" \
     --smtp-port=<%= node['mailcatcher']['smtp_port'] %> \
-    --foreground
+    --foreground <%= ">> #{node['mailcatcher']['logfile']}" unless node['mailcatcher']['logfile'].blank? %>
